@@ -12,7 +12,7 @@ public class Main {
         Scanner leer2 = new Scanner(System.in);
         int opc=20, conP=0,conL=0,conV=0,conM=0;
         //creacion de los costos por partido
-        double cPolo=0,cLiberal=0,cVerde=0,cmira=0;
+        double costosPolo=0,costosLiberal=0,costosVerde=0,costosMira=0,cT=0,cR=0,cI=0;
         //instanceado de las variables politicos
         politico politico1 = new politico("Carlos Alberto", "Martinez Velandia", 62377111, 26, 3845265, "cll 5 a sur","Villeta (Cundinamarca)", "Polo");
         politico politico2 = new politico("Andres Camilo", "Beltran Ovalle", 80895881, 30, 9684528,"cll  6 norte","Facatativa (Cundinamarca)", "Polo");
@@ -24,10 +24,14 @@ public class Main {
         politico politico8 = new politico("Edinson Ferney", "Alvarez Vivas", 90123564, 44, 9866478, "cll 23ab sur","Sasaima (Cundinamarca)", "Mira");
         politico politico9 = new politico("Dairo Estiben", "Beltran Martinez", 1070989058, 18, 3845265, "cll 32 a sur 9-22","Quebradanegra (Cundinamarca)", "Mira");
         //instanceado de partidos
-        Partido polo = new Partido("Polo",3000000000l);
-        Partido liberal = new Partido("Liberal",2000000000l);
-        Partido verde = new Partido("verde",1000000000l);
-        Partido mira = new Partido("mira",500000000l);
+        Partido polo = new Partido(3000000000l);
+        Partido liberal = new Partido(2000000000l);
+        Partido verde = new Partido(1000000000l);
+        Partido mira = new Partido(500000000l);
+        //instanceado de influencias
+        Partido tele = new Partido(200000);
+        Partido radio = new Partido(150000);
+        Partido internet = new Partido(10000);
         //creacion del menu
         while(opc!=0){
                 System.out.println("Bienvenido, que desea hacer?"); 
@@ -118,7 +122,6 @@ public class Main {
                                 conM = politico8.votosC+politico9.votosC;
                             break;
                         }
-                        
                         System.out.println("Por que metodo publicitario se vio influenciado?");
                         System.out.println("1)Voto influenciado por publicidad en Televisión");
                         System.out.println("2)Voto influenciado por publicidad en Radio");
@@ -130,11 +133,25 @@ public class Main {
                         }
                         switch(opc){
                             case 1:
-                               polo = 
+                               cT++;
+                               costosPolo = (cT*tele.influencia)+polo.costo+costosPolo;
+                               costosLiberal = (cT*tele.influencia)+liberal.costo;
+                               costosVerde = (cT*tele.influencia)+verde.costo;
+                               costosMira = (cT*tele.influencia)+mira.costo;
                             break;
                             case 2:
+                               cR++;
+                               costosPolo = (cR*radio.influencia)+polo.costo+costosPolo;
+                               costosLiberal = (cR*radio.influencia)+liberal.costo;
+                               costosVerde = (cR*radio.influencia)+verde.costo;
+                               costosMira = (cR*radio.influencia)+mira.costo;
                             break;
                             case 3:
+                               cI++;                                
+                               costosPolo = (cI*internet.influencia)+polo.costo+costosPolo;
+                               costosLiberal = (cI*internet.influencia)+liberal.costo;
+                               costosVerde = (cI*internet.influencia)+verde.costo;
+                               costosMira = (cI*internet.influencia)+mira.costo;
                             break;
                         }
                         
@@ -158,6 +175,11 @@ public class Main {
                         
                     break;
                     case 4:
+                        //costo promedio por partidos politicos
+                        System.out.println("El partido politico Polo tuvo un costo promedio de: "+costosPolo);
+                        System.out.println("El partido politico Liberal tuvo un costo promedio de: "+costosLiberal);
+                        System.out.println("El partido politico Verde tuvo un costo promedio de: "+costosVerde);
+                        System.out.println("El partido politico Mira tuvo un costo promedio de: "+costosMira);
                     break;
                 
             }

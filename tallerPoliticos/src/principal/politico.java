@@ -3,7 +3,7 @@ public class politico{
     //inicializacion de variables
     public String nombres,apellidos,direccion,ciudadN,partido;
     public int documento,edad,telefono;
-    int votosC,votosP,Costo; 
+    int votosC,votosP; 
     /**
      * constructor para:
      * @param nombres

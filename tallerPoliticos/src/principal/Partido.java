@@ -1,14 +1,15 @@
 package principal;
 public class Partido {
     public long costo;
-    public String partido;
+    public int influencia;
     /**
-     * 
-     * @param partido
+     * @param influencia
      * @param costo 
      */
-    public Partido(String partido,long costo){
+    public Partido(long costo){
         this.costo = costo;
-        this.partido = partido;
+    }
+    public Partido(int influencia){
+        this.influencia = influencia;
     }
 }
