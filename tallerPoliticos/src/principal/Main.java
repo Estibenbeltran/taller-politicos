@@ -1,6 +1,7 @@
 package principal;
 import java.util.Scanner;
 import principal.politico;
+import principal.Partido;
 /**
  *@version 1.0
  * @author Dairo Estiben Beltran Martinez
@@ -10,7 +11,9 @@ public class Main {
         Scanner leer = new Scanner(System.in);
         Scanner leer2 = new Scanner(System.in);
         int opc=20, conP=0,conL=0,conV=0,conM=0;
-        //instanceado de las variables
+        //creacion de los costos por partido
+        double cPolo=0,cLiberal=0,cVerde=0,cmira=0;
+        //instanceado de las variables politicos
         politico politico1 = new politico("Carlos Alberto", "Martinez Velandia", 62377111, 26, 3845265, "cll 5 a sur","Villeta (Cundinamarca)", "Polo");
         politico politico2 = new politico("Andres Camilo", "Beltran Ovalle", 80895881, 30, 9684528,"cll  6 norte","Facatativa (Cundinamarca)", "Polo");
         politico politico3 = new politico("Ana Lucia", "Lee Cano", 21114308, 43, 3986542, "cll 9 sur","Villeta (Cundinamarca)", "Polo");
@@ -20,6 +23,11 @@ public class Main {
         politico politico7 = new politico("William Alberto", "Rodriguez Cepeda", 107066645, 33, 9852467, "cll 5 a sur 4-12","Bogota", "Verde");
         politico politico8 = new politico("Edinson Ferney", "Alvarez Vivas", 90123564, 44, 9866478, "cll 23ab sur","Sasaima (Cundinamarca)", "Mira");
         politico politico9 = new politico("Dairo Estiben", "Beltran Martinez", 1070989058, 18, 3845265, "cll 32 a sur 9-22","Quebradanegra (Cundinamarca)", "Mira");
+        //instanceado de partidos
+        Partido polo = new Partido("Polo",3000000000l);
+        Partido liberal = new Partido("Liberal",2000000000l);
+        Partido verde = new Partido("verde",1000000000l);
+        Partido mira = new Partido("mira",500000000l);
         //creacion del menu
         while(opc!=0){
                 System.out.println("Bienvenido, que desea hacer?"); 
@@ -122,6 +130,7 @@ public class Main {
                         }
                         switch(opc){
                             case 1:
+                               polo = 
                             break;
                             case 2:
                             break;
