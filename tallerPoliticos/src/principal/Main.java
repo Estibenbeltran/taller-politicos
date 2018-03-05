@@ -10,9 +10,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         Scanner leer2 = new Scanner(System.in);
-        int opc=20, conP=0,conL=0,conV=0,conM=0;
+        int opc=20, conP=0,conL=0,conV=0,conM=0,cT=0,cR=0,cI=0;
         //creacion de los costos por partido
-        long costosPolo=0,costosLiberal=0,costosVerde=0,costosMira=0,cT=0,cR=0,cI=0;
+        long costosPolo=0,costosLiberal=0,costosVerde=0,costosMira=0;
         //instanceado de las variables politicos
         politico politico1 = new politico("Carlos Alberto", "Martinez Velandia", 62377111, 26, 3845265, "cll 5 a sur","Villeta (Cundinamarca)", "Polo");
         politico politico2 = new politico("Andres Camilo", "Beltran Ovalle", 80895881, 30, 9684528,"cll  6 norte","Facatativa (Cundinamarca)", "Polo");
