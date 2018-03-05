@@ -16,7 +16,9 @@ public class politico extends Partido{
      * @param partido 
      */    
     public politico(String nombres, String apellidos, int documento, int edad, int telefono, String direccion, String ciudadN, String nombre){
-        //super invoca el metodo o constructor padre
+        /**
+         * super invocar constructor padre
+         */
         super(nombre);     
         this.nombres = nombres;
         this.apellidos = apellidos;

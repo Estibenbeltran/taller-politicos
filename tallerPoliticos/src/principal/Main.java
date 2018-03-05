@@ -91,12 +91,14 @@ public class Main {
                                 System.out.println("1)Voto influenciado por publicidad en Televisión");
                                 System.out.println("2)Voto influenciado por publicidad en Radio");
                                 System.out.println("3)Voto influenciado por publicidad en Internet");
-                                opc = leer.nextInt();
+                                opc = leer.nextInt();//se lee la opcion
                                 while(opc<1 || opc>3){
                                     System.out.println("opcion invalida");
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                    
+                                    //calculo de los costos por partido
                                     case 1:
                                         polo.setCosto(200000);
                                     break;
@@ -109,6 +111,7 @@ public class Main {
                                 }                            
                             break;
                             case 2:
+                                //contador para los partidos
                                 politico2.votosC++; 
                                 conP = politico1.votosC+politico2.votosC+politico3.votosC;
                                 System.out.println("Por que metodo publicitario se vio influenciado?");
@@ -121,6 +124,7 @@ public class Main {
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                    //calculo de los costos por partido
                                     case 1:
                                         polo.setCosto(200000);
                                     break;
@@ -146,6 +150,7 @@ public class Main {
                                 }
                                  switch(opc){
                                     case 1:
+                                        //calculo de los costos por partido
                                         polo.setCosto(200000);
                                     break;
                                     case 2:
@@ -169,6 +174,7 @@ public class Main {
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                        //calculo de los costos por partido
                                     case 1:
                                         liberal.setCosto(200000);
                                     break;
@@ -193,6 +199,7 @@ public class Main {
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                        //calculo de los costos por partido
                                     case 1:
                                         liberal.setCosto(200000);
                                     break;
@@ -217,6 +224,7 @@ public class Main {
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                        //calculo de los costos por partido
                                     case 1:
                                         verde.setCosto(200000);
                                     break;
@@ -241,6 +249,7 @@ public class Main {
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                        //calculo de los costos por partido
                                     case 1:
                                         verde.setCosto(200000);
                                     break;
@@ -265,6 +274,7 @@ public class Main {
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                        //calculo de los costos por partido
                                     case 1:
                                         mira.setCosto(200000);
                                     break;
@@ -289,6 +299,7 @@ public class Main {
                                     opc = leer.nextInt();
                                 }
                                 switch(opc){
+                                        //calculo de los costos por partido
                                     case 1:
                                         mira.setCosto(200000);
                                     break;
