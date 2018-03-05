@@ -12,7 +12,7 @@ public class Main {
         Scanner leer2 = new Scanner(System.in);
         int opc=20, conP=0,conL=0,conV=0,conM=0;
         //creacion de los costos por partido
-        double costosPolo=0,costosLiberal=0,costosVerde=0,costosMira=0,cT=0,cR=0,cI=0;
+        long costosPolo=0,costosLiberal=0,costosVerde=0,costosMira=0,cT=0,cR=0,cI=0;
         //instanceado de las variables politicos
         politico politico1 = new politico("Carlos Alberto", "Martinez Velandia", 62377111, 26, 3845265, "cll 5 a sur","Villeta (Cundinamarca)", "Polo");
         politico politico2 = new politico("Andres Camilo", "Beltran Ovalle", 80895881, 30, 9684528,"cll  6 norte","Facatativa (Cundinamarca)", "Polo");
@@ -67,15 +67,15 @@ public class Main {
                     case 2:
                         //se da la opcion de por cual candidato se desea votar
                         System.out.println("Por cual Aspirante desea votar?()");
-                        System.out.println("1 Apirante (nombres) "+politico1.nombres+" (apellidos) "+politico1.apellidos+" (documento) "+politico1.documento+" (edad) "+politico1.edad+" (telefono) "+politico1.telefono+" (direccion) "+politico1.direccion+" (ciudad de nacimiento) "+politico1.ciudadN+" partido politico "+politico1.partido);
-                        System.out.println("2 Apirante (nombres) "+politico2.nombres+" (apellidos) "+politico2.apellidos+" (documento) "+politico2.documento+" (edad) "+politico2.edad+" (telefono) "+politico2.telefono+" (direccion) "+politico2.direccion+" (ciudad de nacimiento) "+politico2.ciudadN+" partido politico "+politico2.partido);
-                        System.out.println("3 Apirante (nombres) "+politico3.nombres+" (apellidos) "+politico3.apellidos+" (documento) "+politico2.documento+" (edad) "+politico3.edad+" (telefono) "+politico1.telefono+" (direccion) "+politico3.direccion+" (ciudad de nacimiento) "+politico3.ciudadN+" partido politico "+politico3.partido);
-                        System.out.println("4 Apirante (nombres) "+politico4.nombres+" (apellidos) "+politico4.apellidos+" (documento) "+politico4.documento+" (edad) "+politico4.edad+" (telefono) "+politico4.telefono+" (direccion) "+politico4.direccion+" (ciudad de nacimiento) "+politico4.ciudadN+" partido politico "+politico4.partido);
-                        System.out.println("5 Apirante (nombres) "+politico5.nombres+" (apellidos) "+politico5.apellidos+" (documento) "+politico5.documento+" (edad) "+politico5.edad+" (telefono) "+politico5.telefono+" (direccion) "+politico5.direccion+" (ciudad de nacimiento) "+politico5.ciudadN+" partido politico "+politico5.partido);
-                        System.out.println("6 Apirante (nombres) "+politico6.nombres+" (apellidos) "+politico6.apellidos+" (documento) "+politico6.documento+" (edad) "+politico6.edad+" (telefono) "+politico6.telefono+" (direccion) "+politico6.direccion+" (ciudad de nacimiento) "+politico6.ciudadN+" partido politico "+politico6.partido);
-                        System.out.println("7 Apirante (nombres) "+politico7.nombres+" (apellidos) "+politico7.apellidos+" (documento) "+politico7.documento+" (edad) "+politico7.edad+" (telefono) "+politico7.telefono+" (direccion) "+politico7.direccion+" (ciudad de nacimiento) "+politico7.ciudadN+" partido politico "+politico7.partido);
-                        System.out.println("8 Apirante (nombres) "+politico8.nombres+" (apellidos) "+politico8.apellidos+" (documento) "+politico8.documento+" (edad) "+politico8.edad+" (telefono) "+politico8.telefono+" (direccion) "+politico8.direccion+" (ciudad de nacimiento) "+politico8.ciudadN+" partido politico "+politico8.partido);
-                        System.out.println("9 Apirante (nombres) "+politico9.nombres+" (apellidos) "+politico9.apellidos+" (documento) "+politico9.documento+" (edad) "+politico9.edad+" (telefono) "+politico9.telefono+" (direccion) "+politico9.direccion+" (ciudad de nacimiento) "+politico9.ciudadN+" partido politico "+politico9.partido);
+                        System.out.println("1 Apirante (nombres) "+politico1.nombres);
+                        System.out.println("2 Apirante (nombres) "+politico2.nombres);
+                        System.out.println("3 Apirante (nombres) "+politico3.nombres);
+                        System.out.println("4 Apirante (nombres) "+politico4.nombres);
+                        System.out.println("5 Apirante (nombres) "+politico5.nombres);
+                        System.out.println("6 Apirante (nombres) "+politico6.nombres);
+                        System.out.println("7 Apirante (nombres) "+politico7.nombres);
+                        System.out.println("8 Apirante (nombres) "+politico8.nombres);
+                        System.out.println("9 Apirante (nombres) "+politico9.nombres);
                         opc = leer2.nextInt();
                             while(opc<1 || opc>9){
                                     System.out.println("opcion invalida");
@@ -134,21 +134,21 @@ public class Main {
                         switch(opc){
                             case 1:
                                cT++;
-                               costosPolo = (cT*tele.influencia)+polo.costo+costosPolo;
+                               costosPolo = (cT*tele.influencia)+polo.costo;
                                costosLiberal = (cT*tele.influencia)+liberal.costo;
                                costosVerde = (cT*tele.influencia)+verde.costo;
                                costosMira = (cT*tele.influencia)+mira.costo;
                             break;
                             case 2:
                                cR++;
-                               costosPolo = (cR*radio.influencia)+polo.costo+costosPolo;
+                               costosPolo = (cR*radio.influencia)+polo.costo;
                                costosLiberal = (cR*radio.influencia)+liberal.costo;
                                costosVerde = (cR*radio.influencia)+verde.costo;
                                costosMira = (cR*radio.influencia)+mira.costo;
                             break;
                             case 3:
                                cI++;                                
-                               costosPolo = (cI*internet.influencia)+polo.costo+costosPolo;
+                               costosPolo = (cI*internet.influencia)+polo.costo;
                                costosLiberal = (cI*internet.influencia)+liberal.costo;
                                costosVerde = (cI*internet.influencia)+verde.costo;
                                costosMira = (cI*internet.influencia)+mira.costo;
