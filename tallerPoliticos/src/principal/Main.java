@@ -64,7 +64,6 @@ public class Main {
                         System.out.println("7 Apirante (nombres) "+politico7.nombres+" (apellidos) "+politico7.apellidos+" (documento) "+politico7.documento+" (edad) "+politico7.edad+" (telefono) "+politico7.telefono+" (direccion) "+politico7.direccion+" (ciudad de nacimiento) "+politico7.ciudadN+" partido politico "+politico7.partido);
                         System.out.println("8 Apirante (nombres) "+politico8.nombres+" (apellidos) "+politico8.apellidos+" (documento) "+politico8.documento+" (edad) "+politico8.edad+" (telefono) "+politico8.telefono+" (direccion) "+politico8.direccion+" (ciudad de nacimiento) "+politico8.ciudadN+" partido politico "+politico8.partido);
                         System.out.println("9 Apirante (nombres) "+politico9.nombres+" (apellidos) "+politico9.apellidos+" (documento) "+politico9.documento+" (edad) "+politico9.edad+" (telefono) "+politico9.telefono+" (direccion) "+politico9.direccion+" (ciudad de nacimiento) "+politico9.ciudadN+" partido politico "+politico9.partido);
-                        System.out.println("");
                         opc = leer2.nextInt();
                             while(opc<1 || opc>9){
                                     System.out.println("opcion invalida");
@@ -109,6 +108,24 @@ public class Main {
                             case 9:
                                 politico9.votosC++;
                                 conM = politico8.votosC+politico9.votosC;
+                            break;
+                        }
+                        
+                        System.out.println("Por que metodo publicitario se vio influenciado?");
+                        System.out.println("1)Voto influenciado por publicidad en Televisión");
+                        System.out.println("2)Voto influenciado por publicidad en Radio");
+                        System.out.println("3)Voto influenciado por publicidad en Internet");
+                        opc = leer.nextInt();
+                        while(opc<1 || opc>3){
+                            System.out.println("opcion invalida");
+                            opc = leer.nextInt();
+                        }
+                        switch(opc){
+                            case 1:
+                            break;
+                            case 2:
+                            break;
+                            case 3:
                             break;
                         }
                         
