@@ -1,21 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package principal;
-
+import java.util.Scanner;
+import principal.politico;
 /**
- *
- * @author daiyd
+ *@version 1.0
+ * @author Dairo Estiben Beltran Martinez
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //
+        politico politico1 = new politico("Carlos Alberto", "Martinez Velandia", 62377111, 26, 3845265, "cll 5 a sur","Villeta (Cundinamarca)", "Polo");
+        politico politico2 = new politico("Andres Camilo", "Beltran Ovalle", 80895881, 30, 9684528,"cll  6 norte","Facatativa (Cundinamarca)", "Polo");
+        politico politico3 = new politico("Ana Lucia", "Lee Cano", 21114308, 43, 3986542, "cll 9 sur","Villeta (Cundinamarca)", "Polo");
+        politico politico4 = new politico("Ilifonso", "Leon Perez", 80277881, 48, 3845265, "cll 4 a norte","Facatativa (Cundinamarca)", "Liberal");
+        politico politico5 = new politico("Catherin Andrea", "Lopez Preciado", 89549789, 21, 8646464, "cra 6 a sur","Villeta (Cundinamarca)", "liberal");
+        politico politico6 = new politico("Yeison Mauricio", "Martinez Martinez", 10709890, 29, 31435560, "cra 2 sur","Villeta (Cundinamarca)", "Verde");
+        politico politico7 = new politico("William Alberto", "Rodriguez Cepeda", 107066645, 33, 9852467, "cll 5 a sur 4-12","Bogota", "Verde");
+        politico politico8 = new politico("Edinson Ferney", "Alvarez Vivas", 90123564, 44, 9866478, "cll 23ab sur","Sasaima (Cundinamarca)", "Mira");
+        politico politico9 = new politico("Dairo Estiben", "Beltran Martinez", 1070989058, 18, 3845265, "cll 32 a sur 9-22","Quebradanegra (Cundinamarca)", "Mira");
+        
     }
-    
 }
