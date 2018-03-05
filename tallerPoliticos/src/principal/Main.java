@@ -13,6 +13,11 @@ public class Main {
         int opc=20, conP=0,conL=0,conV=0,conM=0,cT=0,cR=0,cI=0;
         //creacion de los costos por partido
         long costosPolo=0,costosLiberal=0,costosVerde=0,costosMira=0;
+        //instanceado de partidos
+        Partido polo = new Partido(3000000000l);
+        Partido liberal = new Partido(2000000000l);
+        Partido verde = new Partido(1000000000l);
+        Partido mira = new Partido(500000000l);
         //instanceado de las variables politicos
         politico politico1 = new politico("Carlos Alberto", "Martinez Velandia", 62377111, 26, 3845265, "cll 5 a sur","Villeta (Cundinamarca)", "Polo");
         politico politico2 = new politico("Andres Camilo", "Beltran Ovalle", 80895881, 30, 9684528,"cll  6 norte","Facatativa (Cundinamarca)", "Polo");
@@ -23,11 +28,6 @@ public class Main {
         politico politico7 = new politico("William Alberto", "Rodriguez Cepeda", 107066645, 33, 9852467, "cll 5 a sur 4-12","Bogota", "Verde");
         politico politico8 = new politico("Edinson Ferney", "Alvarez Vivas", 90123564, 44, 9866478, "cll 23ab sur","Sasaima (Cundinamarca)", "Mira");
         politico politico9 = new politico("Dairo Estiben", "Beltran Martinez", 1070989058, 18, 3845265, "cll 32 a sur 9-22","Quebradanegra (Cundinamarca)", "Mira");
-        //instanceado de partidos
-        Partido polo = new Partido(3000000000l);
-        Partido liberal = new Partido(2000000000l);
-        Partido verde = new Partido(1000000000l);
-        Partido mira = new Partido(500000000l);
         //instanceado de influencias
         Partido tele = new Partido(200000);
         Partido radio = new Partido(150000);
@@ -52,7 +52,6 @@ public class Main {
                     break;
                     case 1:
                         //listado de candidatos
-                        System.out.println("Lista de candidatos");
                         System.out.println("Tarjeton de aspirantes politicos");
                         System.out.println("El aspirante numero 1 es: (nombres) "+politico1.nombres+" (apellidos) "+politico1.apellidos+" (documento) "+politico1.documento+" (edad) "+politico1.edad+" (telefono) "+politico1.telefono+" (direccion) "+politico1.direccion+" (ciudad de nacimiento) "+politico1.ciudadN+" partido politico "+politico1.partido);
                         System.out.println("El aspirante numero 2 es: (nombres) "+politico2.nombres+" (apellidos) "+politico2.apellidos+" (documento) "+politico2.documento+" (edad) "+politico2.edad+" (telefono) "+politico2.telefono+" (direccion) "+politico2.direccion+" (ciudad de nacimiento) "+politico2.ciudadN+" partido politico "+politico2.partido);
@@ -66,7 +65,7 @@ public class Main {
                     break;
                     case 2:
                         //se da la opcion de por cual candidato se desea votar
-                        System.out.println("Por cual Aspirante desea votar?()");
+                        System.out.println("Por cual Aspirante desea votar?");
                         System.out.println("1 Apirante (nombres) "+politico1.nombres);
                         System.out.println("2 Apirante (nombres) "+politico2.nombres);
                         System.out.println("3 Apirante (nombres) "+politico3.nombres);
@@ -87,74 +86,222 @@ public class Main {
                                 //los tres primeros candidatos son de polo, por lo tanto al sumar los votos de los candidatos
                                 //da el resultado de los votos al partido
                                 politico1.votosC++; 
+                                //contador para el partido conP
                                 conP = politico1.votosC+politico2.votosC+politico3.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                }                            
                             break;
                             case 2:
                                 politico2.votosC++; 
                                 conP = politico1.votosC+politico2.votosC+politico3.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                             case 3:
                                 politico3.votosC++;
                                 conP = politico1.votosC+politico2.votosC+politico3.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                 switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                             case 4:
                                 politico4.votosC++;
                                 conL = politico4.votosC+politico5.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                             case 5:
                                 politico5.votosC++;
                                 conL = politico4.votosC+politico5.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                             case 6:
                                 politico6.votosC++;
                                 conV = politico6.votosC+politico7.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                             case 7:
                                 politico7.votosC++;
                                 conV = politico6.votosC+politico7.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                             case 8:
                                 politico8.votosC++;
                                 conM = politico8.votosC+politico9.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                             case 9:
                                 politico9.votosC++;
                                 conM = politico8.votosC+politico9.votosC;
+                                System.out.println("Por que metodo publicitario se vio influenciado?");
+                                System.out.println("1)Voto influenciado por publicidad en Televisión");
+                                System.out.println("2)Voto influenciado por publicidad en Radio");
+                                System.out.println("3)Voto influenciado por publicidad en Internet");
+                                opc = leer.nextInt();
+                                while(opc<1 || opc>3){
+                                    System.out.println("opcion invalida");
+                                    opc = leer.nextInt();
+                                }
+                                switch(opc){
+                                    case 1:
+                                        polo.costo = tele.influencia+polo.costo;
+                                    break;
+                                    case 2:
+                                        polo.costo = radio.influencia+polo.costo;
+                                    break;
+                                    case 3:
+                                        polo.costo = internet.influencia+polo.costo;
+                                    break;
+                                } 
                             break;
                         }
-                        System.out.println("Por que metodo publicitario se vio influenciado?");
-                        System.out.println("1)Voto influenciado por publicidad en Televisión");
-                        System.out.println("2)Voto influenciado por publicidad en Radio");
-                        System.out.println("3)Voto influenciado por publicidad en Internet");
-                        opc = leer.nextInt();
-                        while(opc<1 || opc>3){
-                            System.out.println("opcion invalida");
-                            opc = leer.nextInt();
-                        }
-                        switch(opc){
-                            case 1:
-                               cT++;
-                               costosPolo = (cT*tele.influencia)+polo.costo;
-                               costosLiberal = (cT*tele.influencia)+liberal.costo;
-                               costosVerde = (cT*tele.influencia)+verde.costo;
-                               costosMira = (cT*tele.influencia)+mira.costo;
-                            break;
-                            case 2:
-                               cR++;
-                               costosPolo = (cR*radio.influencia)+polo.costo;
-                               costosLiberal = (cR*radio.influencia)+liberal.costo;
-                               costosVerde = (cR*radio.influencia)+verde.costo;
-                               costosMira = (cR*radio.influencia)+mira.costo;
-                            break;
-                            case 3:
-                               cI++;                                
-                               costosPolo = (cI*internet.influencia)+polo.costo;
-                               costosLiberal = (cI*internet.influencia)+liberal.costo;
-                               costosVerde = (cI*internet.influencia)+verde.costo;
-                               costosMira = (cI*internet.influencia)+mira.costo;
-                            break;
-                        }
-                        
                     break;
                     case 3:
                         //mostrar datos del total de votos por candidato y partido
